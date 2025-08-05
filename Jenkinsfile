@@ -2,21 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Code') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/Iyyappan05/hello-devops.git'
+                git url: 'https://github.com/Iyyappan05/hello-devops.git', branch: 'main'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building the application...'
+                echo 'Building the project...'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing the application...'
+                echo 'Running tests...'
             }
         }
 
